@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 
 const knexfile = require('../knexfile')
 
-const usersRoutes = require('./api/v1/users/users-routes')
+const usersRoutes = require('./api/v1/users/routes')
 
 const knex = Knex(knexfile)
 

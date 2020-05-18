@@ -1,9 +1,12 @@
 const express = require('express')
+const controller = require('./controller')
 
 const router = express.Router()
 
 router.get('/', async (req, res) => {
-  res.json({ user: 10 })
+  const users = await controller.findUsers()
+
+  res.json(users)
 })
 
 module.exports = router
