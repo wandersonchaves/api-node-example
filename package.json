@@ -4,6 +4,7 @@
   "main": "src/index.js",
   "description": "API for the so11os application",
   "repository": "git@github.com:wandersonchaves/api-so11os.git",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
