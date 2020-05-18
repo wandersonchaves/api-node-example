@@ -1,0 +1,59 @@
+{
+  "name": "api-so11os",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "description": "API for the so11os application",
+  "repository": "git@github.com:wandersonchaves/api-so11os.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "format": "prettier --write \"**/*.+(js|json|md)\"",
+    "lint": "eslint --ext .js --ignore-path .gitignore",
+    "migrate:latest": "knex migrate:latest",
+    "seed:run": "knex seed:run"
+  },
+  "engines": {
+    "node": ">= 14"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "faker": "^4.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.3",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "date-fns": "^2.13.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.21.1",
+    "lodash": "^4.17.15",
+    "objection": "^2.1.3",
+    "pg": "^8.2.1",
+    "uuid": "^8.0.0",
+    "yup": "^0.28.5"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "yarn lint"
+    ],
+    "*.{js,json,md}": [
+      "yarn format"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
